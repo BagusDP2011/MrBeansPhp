@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="gaya.css"/>
+
+</head>
+<body>
+    <div class="wrap">
+    
+  
+        <form action="" id="form">
+            <h1>REGISTRASI</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="username" id="username">
+                    <input type="text" placeholder="full name" id="fullname">
+                </div>
+                
+                
+
+                <div class="input-box">
+                    <input type="password" placeholder="password" id="password">
+                    <input type="email" placeholder="email" id="email">
+                </div>
+
+                
+
+                <div class="input-box">
+                    <input type="textarea" placeholder="alamat" id="alamat">
+                    <input type="number" placeholder="No phone" id="nomor">
+                </div>
+
+                
+
+               
+                    <button type="submit" class="btn" onclick="cek_data(); return false">SUBMIT</button>
+               
+        </form>
+        
+        
+   
+</div>
+
+<script type="text/javascript">
+    function cek_data(){
+            if(document.getElementById('username').value==''){
+                alert('nama tidak boleh kososng!');
+                documen.getElementById('username').focus();
+                return false;
+            }
+            if(document.getElementById('alamat').value==''){
+                alert('alamat tidak boleh kososng!');
+                documen.getElementById('nama').focus();
+                return false;
+            }
+            if(document.getElementById('email').value==''){
+                alert('email tidak boleh kososng!');
+                documen.getElementById('email').focus();
+                return false;
+            }
+            if(document.getElementById('nomor').value==''){
+                alert('NO HP tidak boleh kososng!');
+                documen.getElementById('nomor').focus();
+                return false;
+            }
+            if(document.getElementById('password').value==''){
+                alert('password tidak boleh kososng!');
+                documen.getElementById('password').focus();
+                return false;
+            }
+            if(document.getElementById('fullname').value==''){
+                alert('full name tidak boleh kosong!');
+                documen.getElementById('fullname').focus();
+                return false;
+            }
+            document.getElementById('form').submit();
+        }
+</script>
+
+</body>
+</html>

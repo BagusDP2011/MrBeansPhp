@@ -17,5 +17,5 @@ if ($conn->connect_error) {
 // Now you can perform database operations using $conn
 
 // Close connection
-$conn->close();
+// $conn->close();
 ?>

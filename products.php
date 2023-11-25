@@ -1,3 +1,14 @@
+<?php
+include("koneksi.php");
+session_start();
+
+if (isset($_SESSION['fullname'])) {
+  $fullname = $_SESSION['fullname'];
+} else {
+  $fullname = "Guest"; // Default value if fullname is not set in the session
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,7 +40,7 @@
         </h3>
         <a
           class="navbar-brand font-weight-bold"
-          href="/PBL%20Alt/index.php"
+          href="/PBL-PHP/index.php"
           style="font-size: 20px"
           >MrBeans CoffeeBeans Shop</a
         >
@@ -48,19 +59,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size: 16px">
             <li class="nav-item active">
-              <a class="nav-link" href="/PBL%20Alt/index.php">BERANDA</a>
+              <a class="nav-link" href="/PBL-PHP/index.php">BERANDA</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/PBL%20Alt/products.php">PRODUK</a>
+              <a class="nav-link" href="/PBL-PHP/products.php">PRODUK</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/PBL%20Alt/reseller.php">RESELLER</a>
+              <a class="nav-link" href="/PBL-PHP/reseller.php">RESELLER</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/PBL%20Alt/contact.php">HUBUNGI KAMI</a>
+              <a class="nav-link" href="/PBL-PHP/contact.php">HUBUNGI KAMI</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/PBL%20Alt/help.php">BANTUAN</a>
+              <a class="nav-link" href="/PBL-PHP/help.php">BANTUAN</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0" style="font-size: 16px">
@@ -82,15 +93,18 @@
                 </button>
               </div>
               <div class="col mt-1">
-                <a href="login.php">
-  
-                  Login
-                </a>
-                /
-                <a href="regist.php">
-                  Register
-                </a>
-              </div>
+              <?php if ($fullname === "Guest") : ?>
+                <!-- Show login and register links for guests -->
+                <a href="login.php">Login</a> /
+                <a href="regist.php">Register</a>
+              <?php endif; ?>
+              <?php if ($fullname !== "Guest") : ?>
+                <div class="d-flex justify-content-between align-items-center mt-1">
+                  Hello, <?php echo $fullname; ?>!
+                  <a href="logoutForm.php" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+                </div>
+              <?php endif; ?>
+            </div>
             </div>
           </form>
 

@@ -1,5 +1,11 @@
 <?php
 include("koneksi.php");
+session_start();
+// Check for an error parameter in the URL
+// if (isset($_GET['error']) && $_GET['error'] === 'empty_fields') {
+//   // Display an error message informing the user about empty fields
+//   echo "<p style='color: red;'>Please fill in both username and password fields.</p>";
+// }
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +37,7 @@ include("koneksi.php");
       </h3>
       <a
         class="navbar-brand font-weight-bold"
-        href="/PBL%20Alt/index.php"
+        href="/PBL-PHP/index.php"
         style="font-size: 20px"
         >MrBeans CoffeeBeans Shop</a
       >
@@ -50,19 +56,19 @@ include("koneksi.php");
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size: 16px">
           <li class="nav-item active">
-            <a class="nav-link" href="/PBL%20Alt/index.php">BERANDA</a>
+            <a class="nav-link" href="/PBL-PHP/index.php">BERANDA</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/PBL%20Alt/products.php">PRODUK</a>
+            <a class="nav-link" href="/PBL-PHP/products.php">PRODUK</a>
           </li>
           <!-- <li class="nav-item active">
             <a class="nav-link" href="/reseller.php">RESELLER</a>
           </li> -->
           <li class="nav-item active">
-            <a class="nav-link" href="/PBL%20Alt/contact.php">HUBUNGI KAMI</a>
+            <a class="nav-link" href="/PBL-PHP/contact.php">HUBUNGI KAMI</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/PBL%20Alt/help.php">BANTUAN</a>
+            <a class="nav-link" href="/PBL-PHP/help.php">BANTUAN</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" style="font-size: 16px">
@@ -109,14 +115,14 @@ include("koneksi.php");
 
   <!-- Isi  -->
     <div class="wrapper">
-      <form action="">
+      <form action="loginForm.php" method="POST">
         <h1 style="font-weight: bold;">Login</h1>
         <div class="input-box">
-          <input type="text" placeholder="Username" required />
+          <input type="text" placeholder="Username" id="username" name="username" required />
           <i class="bx bxs-user"></i>
         </div>
         <div class="input-box">
-          <input type="password" placeholder="Password" required />
+          <input type="password" placeholder="Password" id="password" name="password" required />
           <i class="bx bxs-lock-alt"></i>
         </div>
         <div class="remember-forgot d-flex justify-content-between">

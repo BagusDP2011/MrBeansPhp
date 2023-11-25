@@ -33,7 +33,7 @@ include("koneksi.php");
         </h3>
         <a
           class="navbar-brand font-weight-bold"
-          href="/PBL%20Alt/index.php"
+          href="/PBL-PHP/index.php"
           style="font-size: 20px"
           >MrBeans CoffeeBeans Shop</a
         >
@@ -52,19 +52,19 @@ include("koneksi.php");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size: 16px">
             <li class="nav-item active">
-              <a class="nav-link" href="/PBL%20Alt/index.php">BERANDA</a>
+              <a class="nav-link" href="/PBL-PHP/index.php">BERANDA</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/PBL%20Alt/products.php">PRODUK</a>
+              <a class="nav-link" href="/PBL-PHP/products.php">PRODUK</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/PBL%20Alt/reseller.php">RESELLER</a>
+              <a class="nav-link" href="/PBL-PHP/reseller.php">RESELLER</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/PBL%20Alt/contact.php">HUBUNGI KAMI</a>
+              <a class="nav-link" href="/PBL-PHP/contact.php">HUBUNGI KAMI</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/PBL%20Alt/help.php">BANTUAN</a>
+              <a class="nav-link" href="/PBL-PHP/help.php">BANTUAN</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0" style="font-size: 16px">
@@ -99,21 +99,21 @@ include("koneksi.php");
       </div>
     </nav>
     <div class="wrap">
-      <form action="" id="form">
+      <form action="registerForm.php" id="form" method="post">
         <h1 style="font-weight: bold;">Registrasi</h1>
         <div class="input-box d-flex justify-content-between">
-          <input type="text" placeholder="Username" id="username" />
-          <input type="text" placeholder="Full Name" id="fullname" />
+          <input type="text" placeholder="Username" id="username" name="username"/>
+          <input type="text" placeholder="Full Name" id="fullName" name="fullName"/>
         </div>
 
         <div class="input-box d-flex justify-content-between">
-          <input type="password" placeholder="Password" id="password" />
-          <input type="email" placeholder="Email" id="email" />
+          <input type="password" placeholder="Password" id="password" name="password"/>
+          <input type="email" placeholder="Email" id="email" name="email"/>
         </div>
 
         <div class="input-box d-flex justify-content-between">
-          <input type="textarea" placeholder="Alamat" id="alamat" />
-          <input type="number" placeholder="No Phone" id="nomor" />
+          <input type="textarea" placeholder="Alamat" id="alamat" name="alamat"/>
+          <input type="number" placeholder="No Phone" id="noHp" name="noHp"/>
         </div>
 
         <button type="submit" class="btn" onclick="cek_data(); return false">
